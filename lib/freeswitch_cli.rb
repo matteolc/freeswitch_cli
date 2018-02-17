@@ -27,6 +27,8 @@ module FreeswitchCli
     yield(config)
     end
 
+    extend self
+
     FS_CLI = "fs_cli -H #{config.freeswitch_host_address} -x ".freeze
 
 end
