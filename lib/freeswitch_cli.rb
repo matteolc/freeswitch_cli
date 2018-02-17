@@ -11,7 +11,21 @@ require 'freeswitch_cli/template'
 
 module FreeswitchCli
 
-    extend self
+    class << self
+    attr_accessor :config
+    end
+
+    def self.config
+    @config ||= Config.new
+    end
+
+    def self.reset
+    @config = Config.new
+    end
+
+    def self.configure
+    yield(config)
+    end
 
     FS_CLI = "fs_cli -H #{config.freeswitch_host_address} -x ".freeze
 
