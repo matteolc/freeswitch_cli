@@ -20,8 +20,8 @@ module FreeswitchCli
                                HOST[:user], 
                                password: HOST[:password], 
                                port: HOST[:port])
-            rescue
-                "SSH Connection Error"
+            rescue => e
+                puts e.to_s
             end
         end  
                                           

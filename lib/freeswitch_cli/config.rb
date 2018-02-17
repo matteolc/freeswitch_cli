@@ -5,7 +5,7 @@ module FreeswitchCli
   include ActiveSupport::Configurable
 
   config.instance_eval do
-    #self.freeswitch_host_address = '81.29.150.203'
+    self.freeswitch_host_address = FreeswitchCli.config.freeswitch_host_address
     #self.freeswitch_host_ssh_secret = '0a92c6e23d7aecdd'
     #self.freeswitch_host_ssh_port = 22
     #self.freeswitch_host_ssh_user = 'root'
